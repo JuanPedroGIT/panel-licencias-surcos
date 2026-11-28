@@ -1,4 +1,4 @@
-# Surcos · Panel de licencias
+# Surkio · Panel de licencias
 
 Proyecto Vue 3 + Vite + TypeScript para Vercel. Conserva el componente original.
 
