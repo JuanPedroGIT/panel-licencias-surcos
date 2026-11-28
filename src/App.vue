@@ -63,7 +63,7 @@ const previewText = computed(() => {
   if (noticeEs.value.trim()) return noticeEs.value
   const date = new Date(toUtc(effectiveDate.value))
   return Number.isFinite(date.getTime())
-    ? `Surcos sigue siendo gratis hasta el ${date.toLocaleDateString('es-ES', { dateStyle: 'long', timeZone: 'UTC' })}.`
+    ? `Surkio sigue siendo gratis hasta el ${date.toLocaleDateString('es-ES', { dateStyle: 'long', timeZone: 'UTC' })}.`
     : 'Cuando indiques la fecha, aquí verás el aviso.'
 })
 
@@ -89,9 +89,9 @@ async function preparePolicy() {
 <template>
   <div class="shell">
     <aside class="sidebar">
-      <a class="brand" href="#licencias" aria-label="Surcos, licencias">
-        <span class="furrows" aria-hidden="true"><i></i><i></i><i></i></span>
-        Surcos
+      <a class="brand" href="#licencias" aria-label="Surkio, licencias">
+        <img class="brand-icon" src="/surkio.svg" width="40" height="40" alt="">
+        Surkio
       </a>
       <nav aria-label="Panel">
         <a class="nav-active" href="#licencias" aria-current="page"><span aria-hidden="true">◇</span> Licencias</a>
@@ -146,10 +146,10 @@ async function preparePolicy() {
             </div>
             <p class="hint">Fechas a las 00:00 UTC. El modo Promoción mantiene el acceso gratuito.</p>
             <label>Mensaje del aviso
-              <textarea v-model="noticeEs" rows="3" maxlength="500" placeholder="Surcos sigue siendo gratis hasta…"></textarea>
+              <textarea v-model="noticeEs" rows="3" maxlength="500" placeholder="Surkio sigue siendo gratis hasta…"></textarea>
             </label>
           </template>
-          <p v-else class="hint">Con esta política, Surcos permite iniciar trabajos sin pedir licencia.</p>
+          <p v-else class="hint">Con esta política, Surkio permite iniciar trabajos sin pedir licencia.</p>
 
           <details class="advanced">
             <summary>Opciones adicionales</summary>
@@ -169,12 +169,12 @@ async function preparePolicy() {
             <p>{{ previewText }}</p>
             <details>
               <summary>Ver detalles</summary>
-              <p>El aviso informa del fin previsto de la promoción. En este modo puedes seguir utilizando Surcos gratis.</p>
+              <p>El aviso informa del fin previsto de la promoción. En este modo puedes seguir utilizando Surkio gratis.</p>
             </details>
           </div>
           <div v-else class="banner">
             <h3>Acceso gratuito</h3>
-            <p>Surcos permite iniciar nuevos trabajos sin mostrar el aviso de promoción.</p>
+            <p>Surkio permite iniciar nuevos trabajos sin mostrar el aviso de promoción.</p>
           </div>
         </section>
       </div>
@@ -217,8 +217,7 @@ body { display: block; min-width: 320px; margin: 0; }
 .shell { min-height: 100vh; display: grid; grid-template-columns: minmax(185px, 18%) minmax(0, 1fr); }
 .sidebar { padding: 30px 16px; background: #123b2b; color: #f5fff6; }
 .brand { display: flex; align-items: center; gap: 12px; margin: 0 8px 40px; font-size: 30px; font-weight: 750; color: inherit; text-decoration: none; }
-.furrows { display: flex; align-items: center; gap: 4px; padding-left: 6px; transform: skewX(-33deg); }
-.furrows i { display: block; background: #efffef; border-radius: 90% 15% 0 0; width: 6px; height: 23px; }
+.brand-icon { flex: 0 0 40px; width: 40px; height: 40px; }
 nav { display: grid; gap: 8px; }
 nav a { display: flex; align-items: center; gap: 10px; padding: 11px 12px; border-radius: 9px; color: inherit; text-decoration: none; }
 nav a:hover, nav a.nav-active { background: #3a6e52; }
